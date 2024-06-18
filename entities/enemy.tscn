@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcy8ylvnq25cb"]
+
+[ext_resource type="Texture2D" uid="uid://bdhrspmn6gmt7" path="res://assets/textures/demon.png" id="1_t5wuv"]
+[ext_resource type="Script" path="res://entities/enemy.gd" id="2_41x41"]
+
+[node name="Enemy" type="TextureRect"]
+texture = ExtResource("1_t5wuv")
+script = ExtResource("2_41x41")

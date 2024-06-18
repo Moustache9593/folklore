@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=3 uid="uid://da3abqwtfeq8b"]
+
+[ext_resource type="Script" path="res://gui/gui_container.gd" id="1_87jei"]
+[ext_resource type="Texture2D" uid="uid://bdhrspmn6gmt7" path="res://assets/textures/demon.png" id="1_xe13x"]
+[ext_resource type="PackedScene" uid="uid://b7xu3t43fh6qx" path="res://entities/player.tscn" id="2_l5d76"]
+
+[node name="GuiContainer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_87jei")
+
+[node name="Player" parent="." instance=ExtResource("2_l5d76")]
+
+[node name="Info" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerInfo" type="ColorRect" parent="Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.85911, 0.967241, 0.889818, 1)
+
+[node name="InfoRects" type="VBoxContainer" parent="Info/PlayerInfo"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 576.0
+offset_bottom = 324.0
+size_flags_horizontal = 3
+
+[node name="Header" type="ColorRect" parent="Info/PlayerInfo/InfoRects"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="Info/PlayerInfo/InfoRects/Header"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 572.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Player"
+horizontal_alignment = 1
+
+[node name="Stats" type="ColorRect" parent="Info/PlayerInfo/InfoRects"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.804743, 0.804743, 0.804743, 1)
+
+[node name="StatsLabel" type="Label" parent="Info/PlayerInfo/InfoRects/Stats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Dog
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyInfo" type="ColorRect" parent="Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.85911, 0.967241, 0.889818, 1)
+
+[node name="InfoRects" type="VBoxContainer" parent="Info/EnemyInfo"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 576.0
+offset_bottom = 324.0
+size_flags_horizontal = 3
+
+[node name="Header" type="ColorRect" parent="Info/EnemyInfo/InfoRects"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="Info/EnemyInfo/InfoRects/Header"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 572.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Enemy"
+horizontal_alignment = 1
+
+[node name="Stats" type="ColorRect" parent="Info/EnemyInfo/InfoRects"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.804743, 0.804743, 0.804743, 1)
+
+[node name="StatsLabel" type="Label" parent="Info/EnemyInfo/InfoRects/Stats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Dog
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+
+[node name="Attack" type="VBoxContainer" parent="HBoxContainer/ColorRect2/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ChargeButton" type="Button" parent="HBoxContainer/ColorRect2/TabContainer/Attack"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Light Attack
+"
+
+[node name="Swing" type="Button" parent="HBoxContainer/ColorRect2/TabContainer/Attack"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Heavy Attack
+"
+
+[node name="Defense" type="VBoxContainer" parent="HBoxContainer/ColorRect2/TabContainer"]
+layout_mode = 2
+
+[node name="Dodge" type="Button" parent="HBoxContainer/ColorRect2/TabContainer/Defense"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dodge
+"
+
+[node name="Brace" type="Button" parent="HBoxContainer/ColorRect2/TabContainer/Defense"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Brace"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_xe13x")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
